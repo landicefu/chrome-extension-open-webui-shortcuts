@@ -5,11 +5,15 @@
   "description": "Adds additional keyboard shortcuts to Open WebUI websites",
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "storage"
   ],
+  "action": {
+    "default_popup": "popup.html"
+  },
   "content_scripts": [
     {
-      "matches": ["https://open-webui.lifehackers.tw/*"],
+      "matches": ["<all_urls>"],
       "js": ["content.js"]
     }
   ]
