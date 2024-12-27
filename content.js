@@ -1,20 +1,28 @@
 // Fixed selectors and shortcut
 const MODEL_SELECTOR_ID = 'model-selector-0-button';
 const SWITCH_BUTTON_SELECTOR = 'button[role="switch"]';
-const SHORTCUT = {
-  key: ',',
-  ctrlKey: true,
-  altKey: false,
-  shiftKey: false
+const SHORTCUTS = {
+  toggleMode: {
+    key: ',',
+    ctrlKey: true,
+    altKey: false,
+    shiftKey: false
+  },
+  stopGeneration: {
+    key: '\\',
+    metaKey: true,  // cmd key on Mac
+    altKey: false,
+    shiftKey: false
+  }
 };
 
 // Listen for keyboard events
 document.addEventListener('keydown', async function(event) {
-  // Check for Control + , shortcut
-  if (event.ctrlKey === SHORTCUT.ctrlKey &&
-      event.altKey === SHORTCUT.altKey &&
-      event.shiftKey === SHORTCUT.shiftKey &&
-      event.key === SHORTCUT.key) {
+  // Handle toggle mode shortcut (Control + ,)
+  if (event.ctrlKey === SHORTCUTS.toggleMode.ctrlKey &&
+      event.altKey === SHORTCUTS.toggleMode.altKey &&
+      event.shiftKey === SHORTCUTS.toggleMode.shiftKey &&
+      event.key === SHORTCUTS.toggleMode.key) {
     
     event.preventDefault(); // Prevent default browser behavior
 
@@ -57,5 +65,24 @@ document.addEventListener('keydown', async function(event) {
         clearInterval(checkInterval);
       }
     }, 100); // Check every 100ms, up to 1 second total
+  }
+
+  // Handle stop generation shortcut (Cmd + \)
+  if (event.metaKey === SHORTCUTS.stopGeneration.metaKey &&
+      event.altKey === SHORTCUTS.stopGeneration.altKey &&
+      event.shiftKey === SHORTCUTS.stopGeneration.shiftKey &&
+      event.key === SHORTCUTS.stopGeneration.key) {
+    
+    event.preventDefault(); // Prevent default browser behavior
+
+    // Simulate Cmd + Shift + S
+    const simulatedEvent = new KeyboardEvent('keydown', {
+      key: 's',
+      code: 'KeyS',
+      metaKey: true,
+      shiftKey: true,
+      bubbles: true
+    });
+    document.dispatchEvent(simulatedEvent);
   }
 });
