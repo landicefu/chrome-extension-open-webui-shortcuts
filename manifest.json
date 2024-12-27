@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Open WebUI Additional Shortcuts",
+  "version": "1.0",
+  "description": "Adds additional keyboard shortcuts to Open WebUI websites",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://open-webui.lifehackers.tw/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
