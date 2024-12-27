@@ -14,12 +14,23 @@ const SHORTCUT = {
 };
 
 // Load configuration and set up listeners
+let currentConfig = defaultConfig;
+
+// Listen for configuration changes
+chrome.storage.onChanged.addListener((changes, namespace) => {
+  if (namespace === 'sync' && changes.urlPattern) {
+    currentConfig.urlPattern = changes.urlPattern.newValue;
+  }
+});
+
 chrome.storage.sync.get(defaultConfig, (config) => {
+  currentConfig = config;
+
   // Listen for keyboard events
   document.addEventListener('keydown', async function(event) {
     // Check if current URL matches the pattern
     const currentUrl = window.location.href;
-    if (!currentUrl.match(new RegExp(config.urlPattern.replace(/\*/g, '.*')))) {
+    if (!currentUrl.match(new RegExp(currentConfig.urlPattern.replace(/\*/g, '.*')))) {
       return;
     }
 
