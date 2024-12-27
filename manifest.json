@@ -2,15 +2,10 @@
   "manifest_version": 3,
   "name": "Open WebUI Additional Shortcuts",
   "version": "1.0",
-  "description": "Adds additional keyboard shortcuts to Open WebUI websites",
+  "description": "Adds additional keyboard shortcuts to Open WebUI",
   "permissions": [
-    "activeTab",
-    "scripting",
-    "storage"
+    "activeTab"
   ],
-  "action": {
-    "default_popup": "popup.html"
-  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],

@@ -1,46 +1,20 @@
 # Open WebUI Additional Shortcuts
 
-A Chrome extension that adds a keyboard shortcut to toggle Temporary Chat mode in Open WebUI.
+A Chrome extension that adds additional keyboard shortcuts to Open WebUI.
 
 ## Features
 
-- Keyboard shortcut (Control + ,) to toggle Temporary Chat mode
-- Configurable website URL patterns
+- `Control + ,` - Toggle between chat and code completion modes
 
-## Default Configuration
+## Installation
 
-By default, the extension is configured for Open WebUI:
-- URL Pattern: `https://open-webui.lifehackers.tw/*`
-- Keyboard Shortcut: `Control + ,` (not configurable)
+1. Clone this repository or download the source code
+2. Open Chrome and navigate to `chrome://extensions`
+3. Enable "Developer mode" in the top right
+4. Click "Load unpacked" and select the extension directory
 
-## How to Configure
+## Usage
 
-1. Click the extension icon in Chrome's toolbar to open the configuration popup
-2. Enter the URL pattern where the shortcut should work
-3. Click "Save" to apply your changes
+The extension will automatically work on any Open WebUI instance. No configuration needed.
 
-## How to Use
-
-1. Install the extension
-2. Configure the website URL pattern using the popup menu
-3. Visit your configured website
-4. Use Control + , to toggle Temporary Chat mode
-
-## URL Pattern Examples
-
-You can customize the extension to work on different websites. Here are some examples:
-
-### Single Website
-- URL Pattern: `https://your-webapp.com/*`
-
-### Multiple Domains
-- URL Pattern: `*://*.example.com/*`
-
-### Local Development
-- URL Pattern: `http://localhost:*/*`
-
-## Development
-
-The extension uses:
-- `manifest.json`: Extension configuration
-- `content.js`: Handles keyboard shortcuts and DOM manipulation
+- Press `Control + ,` to toggle between chat and code completion modes
