@@ -3,6 +3,12 @@
   "name": "Open WebUI Additional Shortcuts",
   "version": "1.0",
   "description": "Adds additional keyboard shortcuts to Open WebUI",
+  "author": "Landice Fu",
+  "developer": {
+    "name": "Landice Fu",
+    "email": "landicefu@gmail.com"
+  },
+  "homepage_url": "https://github.com/landicefu/chrome-extension-open-webui-shortcuts",
   "permissions": [
     "activeTab"
   ],
