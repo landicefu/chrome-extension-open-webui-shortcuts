@@ -1,10 +1,10 @@
 # Open WebUI Additional Shortcuts
 
-A Chrome extension that adds keyboard shortcuts to Open WebUI and similar web applications. Originally designed for Open WebUI, but can be configured to work with any compatible website.
+A Chrome extension that adds a keyboard shortcut to toggle Temporary Chat mode in Open WebUI.
 
 ## Features
 
-- Fixed keyboard shortcut (Control + ,)
+- Keyboard shortcut (Control + ,) to toggle Temporary Chat mode
 - Configurable website URL patterns
 
 ## Default Configuration
@@ -24,7 +24,7 @@ By default, the extension is configured for Open WebUI:
 1. Install the extension
 2. Configure the website URL pattern using the popup menu
 3. Visit your configured website
-4. Use Control + , to toggle between models
+4. Use Control + , to toggle Temporary Chat mode
 
 ## URL Pattern Examples
 
